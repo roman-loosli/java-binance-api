@@ -15,9 +15,6 @@ public class BinanceSymbol {
         if (symbol.contains(" ")) {
             throw new BinanceApiException("Symbol cannot contain spaces. Example: BQXBTC");
         }
-        if (!symbol.endsWith("BTC") && !symbol.endsWith("ETH")&& !symbol.endsWith("BNB") && !symbol.endsWith("USDT")) {
-            throw new BinanceApiException("Market Symbol should be ending with BTC, ETH, BNB or USDT. Example: BQXBTC. Provided: " + symbol);
-        }
         this.symbol = symbol.replace("_", "").replace("-", "").toUpperCase();
     }
 
